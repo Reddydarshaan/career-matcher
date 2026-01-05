@@ -166,8 +166,8 @@ export function Results({
 
           {/* Score Details */}
           <div className="flex-1 text-center md:text-left">
-            <p className={cn("text-lg font-semibold mb-2", getScoreColor())}>
-              {getScoreMessage()}
+           <p className="text-xs text-muted-foreground mb-3">
+            Score is based on resume–job description skill overlap with soft penalties for missing skills.
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-muted-foreground">
               <span className="flex items-center gap-1">
