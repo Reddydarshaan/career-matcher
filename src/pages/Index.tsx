@@ -70,7 +70,6 @@ export default function Index() {
 
       toast({
         title: "Analysis Complete",
-        description: `Your resume matches ${matchResult.score}% of this job.`,
       });
     } catch (error) {
       console.error("Analysis error:", error);
