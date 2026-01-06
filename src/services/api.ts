@@ -32,7 +32,7 @@ export interface GenerateBulletsResponse {
 export async function analyzeResume(
   formData: FormData
 ): Promise<MatchResponse> {
-  const response = await fetch(`${BASE_URL}/match`, {
+  const response = await fetch(`${BASE_URL}/api/match`, {
     method: "POST",
     body: formData, // IMPORTANT: FormData only
   });
@@ -54,7 +54,7 @@ export async function analyzeResume(
 export async function generateBullets(
   missingSkills: string[]
 ): Promise<GenerateBulletsResponse> {
-  const response = await fetch(`${BASE_URL}/generate-bullets`, {
+  const response = await fetch(`${BASE_URL}/api/generate-bullets`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -63,7 +63,8 @@ export async function generateBullets(
   });
 
   if (!response.ok) {
-    throw new Error("Failed to generate bullets");
+    const errorData = await response.json();
+    throw new Error(errorData?.error || "Failed to generate bullets");
   }
 
   return response.json();
