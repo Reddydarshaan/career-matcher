@@ -1,4 +1,4 @@
-# Welcome to your Lovable project
+# Welcome to Career Matcher project
 
 ## Project info
 
